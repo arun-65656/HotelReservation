@@ -1,0 +1,173 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron" style="text-align:center">
+    @*<p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>*@
+    <p>
+        Hotels in Mumbai <br />
+    </p>
+    @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+</div>
+
+
+<div class="row">
+    <div class="col-md-4" style="text-align:center">
+        <p>
+            @*{ Session["img"] = "~/Image/10000148_30-fresho-onion.jpg";}*@
+            <a href="@Url.Action("Reserve","Home",new {HotelId = "1" ,HotelName="OYO 92129 Hotel S K Palace"})"><img src="~/Image/1.jpg" width="200" height="200" /></a>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>OYO 92129 Hotel S K Palace</h2>
+        <div><span class="f4bd0794db"><span class="cb5ebe3ffb"><span aria-expanded="false" data-testid="distance">11.8 km from centre</span></span></span></div>
+        <div class="d8eab2cf7f">OYO 92129 Hotel S K Palace features air-conditioned rooms with cable TV in the Central Suburbs district of Mumbai. </div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" style="background-color: #d1d0f9" onclick="location.href='@Url.Action("Reserve","Home",new {HotelId = "1" ,HotelName="OYO 92129 Hotel S K Palace"})'"><span>Show prices</span></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4" style="text-align:center">
+        <p>
+            @*{ Session["img"] = "~/Image/10000148_30-fresho-onion.jpg";}*@
+            <a href="@Url.Action("Reserve","Home",new {HotelId = "2" ,HotelName="Hotel Palm Beach Pride"} )"><img src="~/Image/2.jpg" width="200" height="200" /></a>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>Hotel Palm Beach Pride</h2>
+        <div><span class="f4bd0794db"><span class="cb5ebe3ffb"><span aria-expanded="false" data-testid="distance">22.8 km from centre</span></span></span></div>
+        <div class="d8eab2cf7f">Well situated in the CBD Belapur district of Mumbai, Hotel Palm Beach Pride is set 26 km from Phoenix Market City Mall, 29 km from Dadar Railway Station and 30 km from Indian Institute of Technology,...</div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" style="background-color: #d1d0f9"><span>Show prices</span></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4" style="text-align:center">
+        <p>
+            @*{ Session["img"] = "~/Image/10000148_30-fresho-onion.jpg";}*@
+            <a href="@Url.Action("Reserve","Home",new {HotelId = "3" ,HotelName="Ramee Guestline Hotel Dadar"})"><img src="~/Image/3.jpg" width="200" height="200" /></a>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>Ramee Guestline Hotel Dadar</h2>
+        <div><span class="f4bd0794db"><span class="cb5ebe3ffb"><span aria-expanded="false" data-testid="distance">6 km from centre</span></span></span></div>
+        <div class="d8eab2cf7f">Located in Dadar, Ramee Guestline Hotel offers 4-star accommodation in Mumbai’s commercial centre. Its modern facilities include a rooftop swimming pool, 3 dining options and free parking. </div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" style="background-color: #d1d0f9"><span>Show prices</span></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4" style="text-align:center">
+        <p>
+            @*{ Session["img"] = "~/Image/10000148_30-fresho-onion.jpg";}*@
+            <a href="@Url.Action("Reserve","Home",new {HotelId = "4" ,HotelName="Hotel Orritel West"})"><img src="~/Image/4.jpg" width="200" height="200" /></a>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>Hotel Orritel West</h2>
+        <div><span class="f4bd0794db"><span class="cb5ebe3ffb"><span aria-expanded="false" data-testid="distance">19 km from centre</span></span></span></div>
+        <div class="d8eab2cf7f">Boasting a bar, garden and views of garden, Hotel Orritel West is set in Mumbai, 2.9 km from Juhu Beach. </div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" style="background-color: #d1d0f9"><span>Show prices</span></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4" style="text-align:center">
+        <p>
+            @*{ Session["img"] = "~/Image/10000346_18-fresho-banana-nendran.jpg";}*@
+            <a href="@Url.Action("Reserve","Home",new {HotelId = "5" ,HotelName="Mumbai House Luxury Apartments Santacruz East, Mumbai"})"><img src="~/Image/5.jpg" width="200" height="200" /></a>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>Mumbai House Luxury Apartments Santacruz East, Mumbai</h2>
+        <div><span class="f4bd0794db"><span class="cb5ebe3ffb"><span aria-expanded="false" data-testid="distance">2.7 km from beach</span></span></span></div>
+        <div class="d8eab2cf7f">With city views, Mumbai House Luxury Apartments Santacruz East, Mumbai is situated in Mumbai and has a restaurant and room service. Free WiFi is available throughout the property. </div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" style="background-color: #d1d0f9"><span>Show prices</span></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4" style="text-align:center">
+        <p>
+            @*{ Session["img"] = "~/Image/10000148_30-fresho-onion.jpg";}*@
+            <a href="@Url.Action("Reserve","Home",new {HotelId = "6" ,HotelName="HOTEL ADARSH BAUG"})"><img src="~/Image/6.jpg" width="200" height="200" /></a>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>HOTEL ADARSH BAUG</h2>
+        <div><span class="f4bd0794db"><span class="cb5ebe3ffb"><span aria-expanded="false" data-testid="distance">2.2 km from centre</span></span></span></div>
+        <div class="d8eab2cf7f">Boasting a terrace and views of city, HOTEL ADARSH BAUG is set in Mumbai, 2 km from Girgaum Chowpatty Beach. </div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" style="background-color: #d1d0f9"><span>Show prices</span></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4" style="text-align:center">
+        <p>
+            @*{ Session["img"] = "~/Image/10000346_18-fresho-banana-nendran.jpg";}*@
+            <a href="@Url.Action("Reserve","Home",new {HotelId = "7" ,HotelName="Hotel Leafio Marigold-Near Airport"})"><img src="~/Image/7.jpg" width="200" height="200" /></a>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>Hotel Leafio Marigold-Near Airport</h2>
+        <div><span class="f4bd0794db"><span class="cb5ebe3ffb"><span aria-expanded="false" data-testid="distance">16.9 km from centre</span></span></span></div>
+        <div class="d8eab2cf7f">Providing free WiFi, Hotel Leafio Marigold-Near Airport is located in Mumbai, within 5 km of Phoenix Market City Mall. Located around 6 km from Powai Lake, the hotel is also 7 km away from ISKCON. </div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" style="background-color: #d1d0f9"><span>Show prices</span></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4" style="text-align:center">
+        <p>
+            @*{ Session["img"] = "~/Image/10000148_30-fresho-onion.jpg";}*@
+            <a href="@Url.Action("Reserve","Home",new {HotelId = "8" ,HotelName="WishTree Apartment kalina Bkc"})"><img src="~/Image/8.jpg" width="200" height="200" /></a>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>WishTree Apartment kalina Bkc</h2>
+        <div><span class="f4bd0794db"><span class="cb5ebe3ffb"><span aria-expanded="false" data-testid="distance">12.5 km from centre</span></span></span></div>
+        <div class="d8eab2cf7f">Providing garden views, WishTree Apartment kalina Bkc in Mumbai provides accommodation, a restaurant, a shared lounge and a garden. </div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" style="background-color: #d1d0f9"><span>Show prices</span></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4" style="text-align:center">
+        <p>
+            @*{ Session["img"] = "~/Image/10000346_18-fresho-banana-nendran.jpg";}*@
+            <a href="@Url.Action("Reserve","Home",new {HotelId = "9",HotelName=  "InterContinental Marine Drive Mumbai, an IHG Hotel"})"><img src="~/Image/9.jpg" width="200" height="200" /></a>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>InterContinental Marine Drive Mumbai, an IHG Hotel</h2>
+        <div><span class="f4bd0794db"><span class="cb5ebe3ffb"><span aria-expanded="false" data-testid="distance">3.8 km from centre</span></span></span></div>
+        <div class="d8eab2cf7f">Situated in Mumbai’s business district, InterContinental Marine Drive boasts unparallel views of the Arabian Sea. </div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" style="background-color: #d1d0f9"><span>Show prices</span></button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4" style="text-align:center">
+        <p>
+            @*{ Session["img"] = "~/Image/10000346_18-fresho-banana-nendran.jpg";}*@
+            <a href="@Url.Action("Reserve","Home",new {HotelId = "10",HotelName= "ITC Grand Central, a Luxury Collection Hotel, Mumbai"})"><img src="~/Image/10.jpg" width="200" height="200" /></a>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>ITC Grand Central, a Luxury Collection Hotel, Mumbai</h2>
+        <div><span class="f4bd0794db"><span class="cb5ebe3ffb"><span aria-expanded="false" data-testid="distance">3.9 km from centre</span></span></span></div>
+        <div class="d8eab2cf7f">Located in Parel Mumbai, a Grandeur, 5-star ITC Grand Central, A Luxury Collection Hotel in Mumbai features exquisite rooms and suites with city views. </div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" style="background-color: #d1d0f9"><span>Show prices</span></button>
+    </div>
+</div>
