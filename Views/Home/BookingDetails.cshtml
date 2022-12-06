@@ -1,0 +1,49 @@
+﻿@using System.Data
+@{
+    ViewBag.Title = "BookingDetails";
+} 
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <table style="width:100%">
+        <tr>
+            <th>CUSTOMER NAME</th>
+            <th>HOTEL NAME</th>
+            <th>EMAIL</th>
+            <th>PHONE</th>
+            <th>CHECKIN</th>
+            <th>CHECKOUT</th>
+            <th>AMOUNT</th>
+            <th>STATUS</th>
+        </tr>
+        @foreach (DataRow row in Model.dt.Rows)
+        {
+            <tr>
+                <td>@row["NAME"]</td>
+                <td>@row["HOTELNAME"]</td>
+                <td>@row["EMAIL"]</td>
+                <td>@row["PHONE"]</td>
+                <td>@Convert.ToDateTime(row["CHECKIN"]).ToString("dd-MM-yyyy")</td>
+                <td>@Convert.ToDateTime(row["CHECKOUT"]).ToString("dd-MM-yyyy")</td>
+                <td>@row["AMOUNT"]</td>
+                <td>@row["BILLSTATUS"]</td>
+            </tr>
+        }
+    </table>
+    <br />
+    <div class="row">
+        <div class="col-md-12" style="text-align:center">
+            <button type="button" style="background-color: #d1d0f9; width: 200px;" onclick="location.href='@Url.Action("Back","Home")'"><span>Back</span></button>
+        </div>
+    </div>
+</body>
+</html>
+
+

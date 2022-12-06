@@ -1,0 +1,48 @@
+﻿@model HotelReservation.Models.loginDetail
+
+@{
+    Layout = null;
+    ViewBag.Title = "Login Page";
+}
+<html>
+<head>
+    <title>Login Page</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body style="background-image: url('../../background.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 form login-form">
+                @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                {
+                    <form>
+                        <h2 class="text-center">Login Here</h2>
+
+                        <div class="form-group">
+                            @Html.TextBoxFor(a => a.email, new { @class = "form-control", @placeholder = "Enter Email" })
+                            @Html.ValidationMessageFor(a => a.email, "", new { @class = "error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.PasswordFor(a => a.password, new { @class = "form-control", @placeholder = "Enter Password" })
+                            @Html.ValidationMessageFor(a => a.password, "", new { @class = "error" })
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control button" type="submit" name="login" value="Login">
+                        </div>
+                        @*<div class="link login-link text-center"><a href="Home/UserRegistration">Click Here To Signup</a></div>*@
+                        <div class="link login-link text-center">
+                            @Html.ActionLink("Click Here To Signup", "UserRegistration", "Home")
+                        </div>
+                </form>
+            }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

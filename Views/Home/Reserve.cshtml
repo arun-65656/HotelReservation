@@ -1,0 +1,275 @@
+﻿
+@{
+    ViewBag.Title = "Reserve";
+}
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+
+<div class="row Reserve">
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        <h5>Hotel Id :  <label id="lblHotelId">@TempData["HotelId"]</label></h5>
+        <br />
+    </div>
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        <h5>Hotel Name :  <label id="lblHotelName">@TempData["HotelName"]</label></h5>
+        <br />
+    </div>
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        <h5>
+            
+            <br />
+            <table style="width:100%">
+                <tr>
+                    <td style="text-align:center">Room Type :</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">Double Room :</td>
+                    <td style="text-align:left"><input type="text" name="Room1" id="Room1" placeholder="0" onkeypress="return /[0-9]/i.test(event.key)" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">Deluxe Triple Room :</td>
+                    <td style="text-align:left"><input type="text" name="Room2" id="Room2" placeholder="0" onkeypress="return /[0-9]/i.test(event.key)" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">Standard Double Room :</td>
+                    <td style="text-align:left"><input type="text" name="Room3" id="Room3" placeholder="0" onkeypress="return /[0-9]/i.test(event.key)" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">Deluxe Room :</td>
+                    <td style="text-align:left"><input type="text" name="Room4" id="Room4" placeholder="0" onkeypress="return /[0-9]/i.test(event.key)" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">Classic Triple Room :</td>
+                    <td style="text-align:left"><input type="text" name="Room5" id="Room5" placeholder="0" onkeypress="return /[0-9]/i.test(event.key)" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">Small Twin Room :</td>
+                    <td style="text-align:left"><input type="text" name="Room6" id="Room6" placeholder="0" onkeypress="return /[0-9]/i.test(event.key)" /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">Standard Double or Twin Room :</td>
+                    <td style="text-align:left"><input type="text" name="Room7" id="Room7" placeholder="0" onkeypress="return /[0-9]/i.test(event.key)" /></td>
+                </tr>
+            </table> 
+        </h5>
+        @*<h2>
+            Room Type :
+            <select name="txtRoomType" id="txtRoomType">
+                <option value="Double Room">Double Room</option>
+                <option value="Deluxe Triple Room">Deluxe Triple Room</option>
+                <option value="Standard Double Room">Standard Double Room</option>
+                <option value="Deluxe Room">Deluxe Room</option>
+                <option value="Classic Triple Room">Classic Triple Room</option>
+                <option value="Small Twin Room">Small Twin Room</option>
+                <option value="Standard Double or Twin Room">Standard Double or Twin Room</option>
+            </select>
+        </h2>*@
+    </div>
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        @*<input class="btn btn-light" type="button" value="PROCEED" id="btnProceed" width="70" style="background-color:blue" />*@
+        <button type="button" style="background-color: #d1d0f9; width: 200px;" id="btnProceed"><span>PROCEED</span></button>
+        <button type="button" style="background-color: #d1d0f9; width: 200px;" onclick="location.href='@Url.Action("Back","Home")'"><span>Back</span></button>
+    </div>
+</div>
+<div class="row Payment" style="display:none">
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        <h5>Hotel Id :  <label id="lblHotelIdPay"></label></h5>
+        <br />
+    </div>
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        <h5>Hotel Name :  <label id="lblHotelNamePay"></label></h5>
+        <br />
+    </div>
+    @*<div class="col-md-12" style="text-align:center">
+        <br />
+        <h2>Room Type :  <label id="lblRoomType"></label></h2>
+        <br />
+    </div>*@
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        <h5>Amount :  <label id="lblAmount"></label>/day</h5>
+        <br />
+    </div>
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        <h5>Check in :  <input type="text" name="txtFromDate" id="txtFromDate" class="datepicker">&nbsp;&nbsp;&nbsp;Check out :  <input type="text" name="txtToDate" id="txtToDate" class="datepicker"></h5>
+        <br />
+    </div>
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        <h5>
+            Payment Mode :
+            <select name="txtPayMode" id="txtPayMode">
+                <option value="CASH">CASH</option>
+                <option value="UPI">UPI</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="Internet Banking">Internet Banking</option>
+            </select>
+        </h5>
+        <br />
+    </div>
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        @*<input class="btn btn-light" type="button" value="PROCEED PAYMENT" id="btnProceedPay" width="70" style="background-color:blue" />*@
+        <button type="button" style="background-color: #d1d0f9; width: 200px;" id="btnProceedPay"><span>PROCEED PAYMENT</span></button>
+        <button type="button" style="background-color: #d1d0f9; width: 200px;" onclick="location.href='@Url.Action("Back","Home")'"><span>Back</span></button>
+        <br />
+        <br />
+    </div>
+</div>
+<div class="row ProceedPay" style="display:none">
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        <h5>Total Paid Amount : <label id="lblTotalPaidAmount" /></h5>
+        <br />
+    </div>
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        <h5><label id="lblProceedPay" /></h5>
+        <br />
+        <button type="button" style="background-color: #d1d0f9; width: 200px;" onclick="location.href='@Url.Action("Back","Home")'"><span>Back</span></button>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.13.2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#txtFromDate").datepicker({ dateFormat: 'mm/dd/yy' });
+        });
+
+        $(function () {
+            $("#txtToDate").datepicker({ dateFormat: 'mm/dd/yy' });
+        });
+
+        $("#btnProceed").click(function () {
+            var num = 0;
+            if ($("#Room1").val() == "") {
+                num = num + 1;
+            }
+            if ($("#Room2").val() == "") {
+                num = num + 1;
+            }
+            if ($("#Room3").val() == "") {
+                num = num + 1;
+            }
+            if ($("#Room4").val() == "") {
+                num = num + 1;
+            }
+            if ($("#Room5").val() == "") {
+                num = num + 1;
+            }
+            if ($("#Room6").val() == "") {
+                num = num + 1;
+            }
+            if ($("#Room7").val() == "") {
+                num = num + 1;
+            }
+            if (num == 7) {
+                alert("Please Select Room Type.");
+                return
+            }
+
+            var obj = {};
+            obj.HotelId = $('#lblHotelId').text();
+            obj.HotelName = $('#lblHotelName').text();
+            //obj.RoomType = $('#txtRoomType').val();
+            obj.Room1 = $('#Room1').val();
+            obj.Room2 = $('#Room2').val();
+            obj.Room3 = $('#Room3').val();
+            obj.Room4 = $('#Room4').val();
+            obj.Room5 = $('#Room5').val();
+            obj.Room6 = $('#Room6').val();
+            obj.Room7 = $('#Room7').val();
+            $.ajax({
+                url: "/Home/Proceed",
+                method: "post",
+                data: '{obj: ' + JSON.stringify(obj) + '}',
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    $('.Reserve').hide();
+                    $('.Payment').show();
+                    $('.ProceedPay').hide();
+                    $("#lblHotelIdPay").text(response.HotelId);
+                    $("#lblHotelNamePay").text(response.HotelName);
+                    //$("#lblRoomType").text(response.RoomType);
+                    $("#lblAmount").text(response.Amount);
+                },
+                error: function (response) {
+                    alert("Error while Log in the Application");
+                }
+            });
+        });
+
+        $("#btnProceedPay").click(function () {
+
+            if ($('#txtFromDate').val() == "") {
+                alert("Please Enter Checkin Date");
+                return
+            }
+            if ($('#txtToDate').val() == "") {
+                alert("Please Enter Checkout Date");
+                return
+            }
+            var obj = {};
+            obj.HotelId = $("#lblHotelIdPay").text();
+            obj.HotelName = $("#lblHotelNamePay").text();
+            //obj.RoomType = $("#lblRoomType").text();
+            obj.Amount = $("#lblAmount").text();
+            obj.sDate = new Date($('#txtFromDate').val());
+            obj.eDate = new Date($('#txtToDate').val());
+            obj.PayMode = $('#txtPayMode').val();
+            //obj.DayCount = Date.parse($('#txtToDate').val()) - Date.parse($('#txtFromDate').val());
+
+            if (obj.sDate=="") {
+                alert('Check in Date Should not be blank.');
+                return;
+            }
+            if (obj.eDate == "") {
+                alert('Check out Date Should not be blank.');
+                return;
+            }
+            if (Date.parse(obj.sDate) > Date.parse(obj.eDate) /*|| Date.parse(obj.sDate) == Date.parse(obj.eDate)*/) {
+                alert('Check out Date Should be greater then Check in Date.');
+                return;
+            }
+            //------------
+            var date1 = new Date(Date.parse($('#txtFromDate').val()));
+            var date2 = new Date(Date.parse($('#txtToDate').val()));
+            var milli_secs = date2.getTime() - date1.getTime();
+            // Convert the milli seconds to Days 
+            var days = milli_secs / (1000 * 3600 * 24);
+            obj.DayCount = Math.round(Math.abs(days)) + 1 ;
+            //------------
+            $.ajax({
+                url: "/Home/ProceedPay",
+                method: "post",
+                data: '{obj: ' + JSON.stringify(obj) + '}',
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    $('.Reserve').hide();
+                    $('.Payment').hide();
+                    $('.ProceedPay').show();
+                    $("#lblTotalPaidAmount").text(response.Amount);
+                    $("#lblProceedPay").text(response.status);
+                },
+                error: function (response) {
+                    alert("Error while Log in the Application");
+                }
+            });
+        });
+    </script>
+}
+
+

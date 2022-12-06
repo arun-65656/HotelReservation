@@ -1,0 +1,68 @@
+﻿@*@model HotelReservation.Models.RegistrationDetails*@
+@using HotelReservation.Models
+@model RegistrationDetails
+@{
+    Layout = null;
+    ViewBag.Title = "UserRegistration";
+    if (ViewBag.Message != null)
+    {
+        <span style="text-align:center; font-size:25px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@ViewBag.Message</span>
+    }
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Signup Page</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body style="background-image: url('../../background.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 form">
+                @using (Html.BeginForm("UserRegistration", "Home", FormMethod.Post))
+                {
+                    <form>
+                        <h2 class="text-center">Signup Here</h2>
+                        <div class="form-group">
+                            @Html.TextBoxFor(a => a.name, new { @placeholder = "Full Name", @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.name, "", new { @class = "error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(a => a.email, new { @placeholder = "Email ID", @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.email, "", new { @class = "error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(a => a.mobile, new { @placeholder = "Mobile", @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.mobile, "", new { @class = "error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.PasswordFor(a => a.password, new { @placeholder = "Password", @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.password, "", new { @class = "error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.PasswordFor(a => a.cpassword, new { @placeholder = "Repeat Password", @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.cpassword, "", new { @class = "error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.DropDownListFor(a => a.Roles, new SelectList(Enum.GetValues(typeof(Role))), new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control button" type="submit" name="signup" value="Signup">
+                        </div>
+                    </form>
+                }
+                @*<div class="link login-link text-center"><a href="Home/Login">Login Here</a></div>*@
+                <div class="link login-link text-center">
+                    @Html.ActionLink("Click Here To Login", "Login", "Home")
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
